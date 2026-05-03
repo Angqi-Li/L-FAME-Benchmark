@@ -163,7 +163,7 @@ Windows are extracted on the fly by `dataset_api.py`. The overlap is strategy-de
 | Group | Meditation style | Subjects (sample) |
 |-------|-----------------|-------------------|
 | HK | Hare Krishna mantra | sub-01, sub-02, sub-08 |
-| SA | Satanama Kundalini | sub-03, sub-04, sub-06 |
+| SA | SA-TA-NA-MA mantra | sub-03, sub-04, sub-06 |
 | BF | Breath-Focus | sub-05, sub-07, sub-09 |
 
 ---

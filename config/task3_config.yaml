@@ -1,0 +1,48 @@
+experiment:
+  project_name: "L-FAME_Task3_Adaptation"
+  batch_size: 4
+  ft_epochs: 30
+
+data:
+  data_root: "../data"
+  tsv_path: "../data/participants.tsv"
+  num_channels: 64
+  num_classes: 2
+  window_sec: 4.0
+  overlap_sec: 3.5
+
+models:
+  EEGNet:
+    ft_lr: 0.00005
+    weight_decay: 0.00005
+    kernel_size: 125
+    f1: 16
+    D: 4
+    dropout_rate: 0.66
+
+  ShallowConvNet:
+    ft_lr: 0.00005
+    weight_decay: 0.006
+    time_kernel: 125
+    dropout_rate: 0.367
+
+  DeepConvNet:
+    ft_lr: 0.00005
+    weight_decay: 0.00001
+    time_kernel: 25
+    dropout_rate: 0.25
+
+  Conformer:
+    ft_lr: 0.00001
+    weight_decay: 0.002
+    emb_size: 40
+    num_heads: 8
+    depth: 4
+    time_kernel: 64
+    dropout_rate: 0.48
+
+  DGCNN:
+    ft_lr: 0.00005
+    weight_decay: 0.001
+    k_adj: 2
+    out_channels: 32

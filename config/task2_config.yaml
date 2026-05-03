@@ -1,0 +1,49 @@
+# configs/task2_config.yaml
+experiment:
+  project_name: "L_FAME_Benchmark_Task2"
+  patience: 50
+  epochs: 250
+  batch_size: 32
+
+data:
+  data_root: "../data"
+  tsv_path: "../data/participants.tsv"
+  num_classes: 3
+  num_channels: 64
+  sig_length: 1000
+
+models:
+  EEGNet:
+    kernel_size: 64
+    f1: 16
+    D: 4
+    dropout_rate: 0.33
+    lr: 0.00001
+    weight_decay: 0.0002
+
+  ShallowConvNet:
+    time_kernel: 25
+    dropout_rate: 0.18
+    lr: 0.0006
+    weight_decay: 0.0004
+
+  DeepConvNet:
+    time_kernel: 125
+    dropout_rate: 0.70
+    lr: 0.0008
+    weight_decay: 0.00003
+
+  Conformer:
+    emb_size: 64
+    num_heads: 8
+    depth: 5
+    time_kernel: 25
+    dropout_rate: 0.50
+    lr: 0.0005
+    weight_decay: 0.0042
+
+  DGCNN:
+    k_adj: 2
+    out_channels: 32
+    lr: 0.0005
+    weight_decay: 0.001

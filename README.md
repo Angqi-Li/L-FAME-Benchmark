@@ -8,7 +8,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Dataset](https://img.shields.io/badge/🤗%20Dataset-L--FAME-yellow)](https://huggingface.co/datasets/L-FAME-Dataset-Benchmark/L-FAME)
-[![BIDS](https://img.shields.io/badge/Format-BIDS%201.7-green)](https://bids.neuroimaging.io/)
+
 
 </div>
 
@@ -421,35 +421,32 @@ To use a different data directory, update `data_root` and `tsv_path` in the conf
 > Results below are reported on the **full 74-subject dataset**. The 9-subject sample included
 > in this repository is intended for pipeline verification only and will yield different values.
 
-### Task 1 — Cognitive State Decoding (BAcc, %)
+### Task 1 — Cognitive State Decoding (AUC, %)
 
 | Model | Intra-subject | Inter-subject | LOSO |
 |-------|:---:|:---:|:---:|
-| EEGNet | — | — | — |
-| ShallowConvNet | — | — | — |
-| DeepConvNet | — | — | — |
-| Conformer | — | — | — |
-| DGCNN | — | — | — |
+| ShallowConvNet | 97.0 ± 2.0 | 66.5 ± 4.3 | 70.4 ± 20.9 |
+| DeepConvNet | 97.0 ± 1.5 | 66.2 ± 5.9 | 68.4 ± 27.0 |
+| EEGNet | 99.2 ± 1.2 | 66.5 ± 4.0 | 66.6 ± 27.4 |
+| EEG-Conformer | 97.2 ± 1.4 | 66.9 ± 5.2 | 67.5 ± 24.5 |
 
-### Task 2 — Technique Classification (BAcc, %)
+### Task 2 — Technique Classification (PR-AUC, %)
 
 | Model | Pre-session | Post-session |
 |-------|:---:|:---:|
-| EEGNet | — | — |
-| ShallowConvNet | — | — |
-| DeepConvNet | — | — |
-| Conformer | — | — |
-| DGCNN | — | — |
+| ShallowConvNet | 38.0 ± 6.2 | 45.7 ± 9.7 |
+| DeepConvNet | 34.5 ± 3.4 | 45.8 ± 10.7 |
+| EEGNet | 35.0 ± 2.9 | 48.8 ± 8.6 |
+| EEG-Conformer | 37.6 ± 4.6 | 43.9 ± 11.4 |
 
-### Task 3 — Cross-Session Adaptation (BAcc, %)
+### Task 3 — Cross-Session Adaptation (AUC, %)
 
-| Model | Zero-shot | 5-shot | 10-shot | 30-shot |
+| Model | Zero-shot | 10-shot | 20-shot | 30-shot |
 |-------|:---:|:---:|:---:|:---:|
-| EEGNet | — | — | — | — |
-| ShallowConvNet | — | — | — | — |
-| DeepConvNet | — | — | — | — |
-| Conformer | — | — | — | — |
-| DGCNN | — | — | — | — |
+| ShallowConvNet | 63.9 ± 16.8 | 75.2 ± 17.5 | 77.6 ± 16.8 | 78.3 ± 16.6 |
+| DeepConvNet | 63.1 ± 22.7 | 72.8 ± 20.2 | 75.9 ± 18.2 | 77.9 ± 18.4 |
+| EEGNet | 63.1 ± 17.8 | 76.5 ± 21.2 | 77.9 ± 22.3 | 79.3 ± 21.6 |
+| EEG-Conformer | 67.2 ± 16.5 | 74.5 ± 18.1 | 75.3 ± 18.6 | 77.2 ± 18.0 |
 
 *Full results and analysis are reported in the accompanying paper.*
 

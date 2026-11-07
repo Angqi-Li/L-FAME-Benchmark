@@ -423,12 +423,12 @@ To use a different data directory, update `data_root` and `tsv_path` in the conf
 
 ### Task 1 — Cognitive State Decoding (AUC, %)
 
-| Model | Intra-subject | Inter-subject | LOSO |
-|-------|:---:|:---:|:---:|
-| ShallowConvNet | 97.0 ± 2.0 | 66.5 ± 4.3 | 70.4 ± 20.9 |
-| DeepConvNet | 97.0 ± 1.5 | 66.2 ± 5.9 | 68.4 ± 27.0 |
-| EEGNet | 99.2 ± 1.2 | 66.5 ± 4.0 | 66.6 ± 27.4 |
-| EEG-Conformer | 97.2 ± 1.4 | 66.9 ± 5.2 | 67.5 ± 24.5 |
+| Model | Intra-subject (block-wise) | Intra-subject (chrono-wise) | Inter-subject | LOSO |
+|-------|:---:|:---:|:---:|:---:|
+| ShallowConvNet | 97.2 ± 4.4 | 92.8 ± 8.7 | 66.5 ± 4.3 | 70.4 ± 20.9 |
+| DeepConvNet | 97.0 ± 8.5 | 95.0 ± 11.3 | 66.2 ± 5.9 | 68.4 ± 27.0 |
+| EEGNet | 99.2 ± 2.2 | 96.8 ± 5.5 | 66.5 ± 4.0 | 66.6 ± 27.4 |
+| EEG-Conformer | 97.0 ± 5.0 | 92.5 ± 9.3 | 66.9 ± 5.2 | 67.5 ± 24.5 |
 
 ### Task 2 — Technique Classification (PR-AUC, %)
 
@@ -447,6 +447,9 @@ To use a different data directory, update `data_root` and `tsv_path` in the conf
 | DeepConvNet | 63.1 ± 22.7 | 72.8 ± 20.2 | 75.9 ± 18.2 | 77.9 ± 18.4 |
 | EEGNet | 63.1 ± 17.8 | 76.5 ± 21.2 | 77.9 ± 22.3 | 79.3 ± 21.6 |
 | EEG-Conformer | 67.2 ± 16.5 | 74.5 ± 18.1 | 75.3 ± 18.6 | 77.2 ± 18.0 |
+
+*Mean ± SD (sample SD). Intra-subject and LOSO: across 74 subjects; Inter-subject and Task 2: across 5 folds; Task 3: across 44 subjects with post-intervention data (full fine-tuning).*
+
 
 *Full results and analysis are reported in the accompanying paper.*
 
@@ -503,11 +506,11 @@ Checkpoints are saved to `results/checkpoints/task{1,2,3}/`.
 If you use L-FAME in your research, please cite:
 
 ```bibtex
-@article{lfame2025,
-  title   = {L-FAME: A Longitudinal Focus Attention Meditation EEG Benchmark},
-  author  = {[Author list]},
-  journal = {[Venue]},
-  year    = {2025}
+@article{li2026fame,
+  title={L-FAME: Longitudinal Focused Attention Meditation EEG Dataset and Benchmark},
+  author={Li, Angqi and Syed, Ab Basit Rafi and Alzweri, Hamzeh and Liu, Taosheng and Cohen, Barry H and Ravishankar, Saiprasad},
+  journal={arXiv preprint arXiv:2605.22893},
+  year={2026}
 }
 ```
 
